@@ -1,0 +1,311 @@
+{
+  "name": "mariage",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "iVzWf",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Merci de mentionner une personne pour le mariage .",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "idauthor",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "M/Mme ${member} Vous demandez au mariage voulez, vous acceptez ${mentionedUser} ? Taper dans le tchat oui ou non !",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"id\")}'",
+      "max": "1",
+      "time": "60000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "rep",
+      "name": "Await Response Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "rep",
+      "info": "2",
+      "storage": "1",
+      "varName2": "suce",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"oui\"",
+      "iftrue": "2",
+      "iftrueVal": "12",
+      "iffalse": "2",
+      "iffalseVal": "10",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"non\"",
+      "iftrue": "2",
+      "iftrueVal": "31",
+      "iffalse": "2",
+      "iffalseVal": "33",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Prètre jack",
+      "author": "",
+      "color": "PURPLE",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "message": "*Le prêtre Jack interroge le/la fiancé : ${member}, voulez-vous prendre pour épou(se)(x) ${mentionedUser} pourl'aimer fidèlement dans le bonheur ou dans les épreuves, tout au long de votre vie ?*\n\n{ oui ou non }",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"idauthor\")}'",
+      "max": "1",
+      "time": "60000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "rep",
+      "name": "Await Response Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "rep",
+      "info": "2",
+      "storage": "1",
+      "varName2": "suce",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"oui\"",
+      "iftrue": "2",
+      "iftrueVal": "20",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"non\"",
+      "iftrue": "2",
+      "iftrueVal": "31",
+      "iffalse": "2",
+      "iffalseVal": "33",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Prètre Jack ",
+      "author": "",
+      "color": "PURPLE",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "message2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "message2",
+      "message": "*Le/la fiancé : Oui (je le veux). Le prêtre Jack, à la fiancé'e' : ${mentionedUser}, voulez-vous prendre pour épou(x)(se) ${member} pour l'aimer fidèlement dans le bonheur ou dans les épreuves, tout au long de votre vie ?*\n\n{ oui ou non }",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "message2",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"id\")}'",
+      "max": "1",
+      "time": "60000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "rep",
+      "name": "Await Response Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "rep",
+      "info": "2",
+      "storage": "1",
+      "varName2": "suce",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"oui\"",
+      "iftrue": "2",
+      "iftrueVal": "27",
+      "iffalse": "2",
+      "iffalseVal": "26",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "suce",
+      "comparison": "1",
+      "value": "\"non\"",
+      "iftrue": "2",
+      "iftrueVal": "31",
+      "iffalse": "2",
+      "iffalseVal": "33",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Prètre Jack ",
+      "author": "",
+      "color": "PURPLE",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "message3",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "message3",
+      "message": "*le prêtre Jack invite les époux à se donner la main droite et confirme l'union : - Désormais, vous êtes unis par Dieu dans le mariage ! Amène\n\nToutes mes félicitations ${member},${mentionedUser} Pour votre mariage Tu pourras réclamer une récompense sur le serveur support !* ",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "message3",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Malheureusement le/la personne à refuser votre demande de mariage que dieu pardonne cette personne.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Veuillez reformulé votre demande de mariage. Mariage tag",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
